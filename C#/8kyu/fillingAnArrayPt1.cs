@@ -3,8 +3,8 @@ using System.Linq;
 
 public class Kata
 {
-    public static int[] Arr (int N)
+    public static int[] Arr (int num)
     {
-        return Enumerable.Range (0, N).ToArray ();
+        return Enumerable.Range (0, num).ToArray ();
     }
 }
