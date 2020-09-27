@@ -9,4 +9,18 @@
              arr.OrderByDescending (x => x).Skip (i / 2).First () :
              arr.OrderBy (x => x).Skip (i / 2).First ()).ToList ();
      }
+
+     public static List<int> Solve2 (List<int> arr)
+     {
+         arr = arr.Distinct ().OrderByDescending (i => i).ToList ();
+         var result = new List<int> ();
+         for (var i = 0; i < Math.Ceiling (arr.Count / 2.0); i++)
+         {
+             result.Add (arr[i]);
+             if (i < arr.Count / 2)
+                 result.Add (arr[arr.Count - 1 - i]);
+         }
+
+         return result;
+     }
  }
